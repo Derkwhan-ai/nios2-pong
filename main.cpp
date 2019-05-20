@@ -9,7 +9,7 @@
 
 #include "controllerlib/controller.c"
 
-#define BAR_STEP 5
+#define BAR_STEP 2
 
 void startScreen();
 void creditsScreen();
@@ -64,49 +64,22 @@ void gameScreen() {
         .color = color
     };
 
+    int controllerMaintainReturn;
+
     while (gameRunning) {
-        sf::Event event;
+        while (controllerMaintainReturn = controllerMaintain());
+        if (controllerMaintainReturn == -1) gameRunning = 0;
 
-        while (screen_window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                screen_window.close();
-                gameRunning = 0;
-            }
+        if (getSwitchValue(0)) {
+            if (p2.y > 0) p2.y -= BAR_STEP;
+        } else {
+            if (p2.y + p2.height < SCREEN_MAX_HEIGHT) p2.y += BAR_STEP;
+        }
 
-            if (event.type == sf::Event::KeyPressed) {
-                //printf("Key: %d\n", event.key.code);
-
-                switch(event.key.code) {
-                case 22: // W key
-                    if (p1.y <= 0) break;
-                    p1.y += -BAR_STEP;
-                    //printf("P1 Up: %d %d\n", p1.y1, p1.y2);
-                    break;
-                case 18: // S key
-                    if (p1.y + p1.height >= SCREEN_HEIGHT - 1) break;
-                    p1.y += BAR_STEP;
-                    //printf("P1 Down: %d %d\n", p1.y1, p1.y2);
-                    break;
-                case 73: // Up arrow
-                    if (p2.y <= 0) break;
-                    p2.y += -BAR_STEP;
-                    //printf("P2 Up: %d %d\n", p2.y1, p2.y2);
-                    break;
-                case 74: // Down arrow
-                    if (p2.y + p2.height >= SCREEN_HEIGHT-1) break;
-                    p2.y += BAR_STEP;
-                    //printf("P2 Down: %d %d\n", p2.y1, p2.y2);
-                    break;
-                case 58: // Enter key
-                    scored = 0;
-                    ball.x = SCREEN_WIDTH/2 - 2;
-                    ball.y = SCREEN_HEIGHT/2 - 2;
-                    stepBallX = rand() % 3 - 2;
-                    stepBallY = rand() % 3 - 2;
-                default:
-                    break;
-                }
-            }
+        if (getSwitchValue(17)) {
+            if (p1.y > 0) p1.y -= BAR_STEP;
+        } else {
+            if (p1.y + p1.height < SCREEN_MAX_HEIGHT) p1.y += BAR_STEP;
         }
 
         if (scored) continue;

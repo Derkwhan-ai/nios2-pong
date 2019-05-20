@@ -421,7 +421,7 @@
 	<SFML/Graphics.hpp>
 	"drawlib.h"
 
-1558381534 source:c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\main.cpp
+1558385357 source:c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\main.cpp
 	<math.h>
 	<unistd.h>
 	<time.h>
@@ -429,6 +429,7 @@
 	"drawlib/screen.c"
 	"drawlib/draw.c"
 	"drawlib/physics.c"
+	"controllerlib/controller.c"
 
 1558379160 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\drawlib.cpp
 	<SFML/Graphics.hpp>
@@ -439,9 +440,9 @@
 	<SFML/Graphics.hpp>
 	"screen.h"
 
-1558381508 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\screen.h
+1558382256 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\screen.h
 
-1558379981 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\draw.c
+1558383086 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\draw.c
 	"draw.h"
 
 1558380008 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\draw.h
@@ -450,4 +451,10 @@
 	"physics.h"
 
 1558380849 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\physics.h
+
+1558384818 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\controllerlib\controller.c
+	<SFML/Graphics.hpp>
+	"controller.h"
+
+1558383820 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\controllerlib\controller.h
 
