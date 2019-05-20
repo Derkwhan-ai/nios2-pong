@@ -3,18 +3,40 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include "drawlib/drawlib.cpp"
+#include "drawlib/screen.c"
+#include "drawlib/draw.c"
+#include "drawlib/physics.c"
+
+#include "controllerlib/controller.c"
 
 #define BAR_STEP 5
 
-int main() {
-    srand((unsigned int) time(NULL));
+void startScreen();
+void creditsScreen();
+void gameScreen();
+int main();
 
-    initScreen();
+void startScreen() {
+    // TODO:
+    // - Print the game main menu screen
+    //    - Start game
+    //    - Credits
+    //    - Easter egg???
 
-    int stepBallX = 1;
-    int stepBallY = 1;
+    // Skip to the game until we have no menu yet...
+    gameScreen();
+}
+
+void creditsScreen() {
+    // TODO
+}
+
+void gameScreen() {
+    float stepBallX = 0.7071;
+    float stepBallY = 0.7071;
     short int color = rand() % 0xFFFF;
+
+    short int gameRunning = 1;
 
     short int scored = 0;
 
@@ -42,11 +64,15 @@ int main() {
         .color = color
     };
 
-    while (window.isOpen()) {
+    while (gameRunning) {
         sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
+
+        while (screen_window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                screen_window.close();
+                gameRunning = 0;
+            }
+
             if (event.type == sf::Event::KeyPressed) {
                 //printf("Key: %d\n", event.key.code);
 
@@ -124,6 +150,14 @@ int main() {
         clearRectFilled(p1);
         clearRectFilled(p2);
     }
+}
+
+int main() {
+    srand((unsigned int) time(NULL));
+
+    initScreen();
+
+    startScreen();
 
     return 0;
 }
