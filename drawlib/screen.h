@@ -26,5 +26,7 @@ void waitScreen();
 // Avoid this.
 void clearScreen();
 
+void updateScreen(); // For SFML
+
 
 #endif

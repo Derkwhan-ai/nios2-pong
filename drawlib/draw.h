@@ -3,14 +3,14 @@
 
 
 typedef struct line {
-    int x1, y1;
-    int x2, y2;
+    float x1, y1;
+    float x2, y2;
     COLOR color;
 } LINE;
 
 typedef struct rectangle {
-    int x, y;
-    int width, height;
+    float x, y;
+    float width, height;
     COLOR color;
 } RECTANGLE;
 

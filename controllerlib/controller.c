@@ -7,14 +7,18 @@ char switches[18];
 char buttons[3];
 
 char controllerMaintain() {
-    if (screen_window.pollEvent(event)) {
+    char hasMorePending = screen_window.pollEvent(event);
+
+    if (hasMorePending) {
+
         if (event.type == sf::Event::Closed) {
+            printf("Event: closed window\n");
             screen_window.close();
-            return -1;
+            return 2;
         }
 
         if (event.type == sf::Event::KeyPressed) {
-            //printf("Key: %d\n", event.key.code);
+            //printf("Event: KeyPressed %d\n", event.key.code);
 
             switch(event.key.code) {
                 case 22: // W key
@@ -44,11 +48,9 @@ char controllerMaintain() {
                 break;
             }
         }
-
-        return 1;
-    } else {
-        return 0;
     }
+
+    return hasMorePending;
 }
 
 char getSwitchValue(char n) { // return the n-th switch value (0 or 1)
@@ -62,22 +64,30 @@ char getButtonValue(char n) { // return the n-th button balue (0 or 1)
 
 
 void setGreenLed(char n, char state) { // set the on-off state of the n-th green led
-
+    return;
 }
 
 void setRedLed(char n, char state) { // set the on-off state of the n-th red led
-
+    return;
 }
 
 
-void setSegDisplay(char n, char c) { // set the displayed digit of the n-th 7-segment display
+void setSegDisplay1(int value) {
+    return;
+}
 
+void setSegDisplay2(int value) {
+    return;
 }
 
 
 void printLCD(char* str) { // prints the char buffer to the lcd screen. CAUTION: mind the line breaks and screen boundaries!
-
+    return;
 }
 void moveLCDCursor(char x, char y) { // set the x and y position o the LCD cursor.
+    return;
+}
 
+void audio_output(int* audio, int lenght) {
+    return;
 }

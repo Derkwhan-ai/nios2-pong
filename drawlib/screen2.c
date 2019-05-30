@@ -17,8 +17,9 @@
 // #define SCREEN_MAX_HEIGHT 239
 
 
-volatile short int* screen = (int*) 0x08000000;
+volatile short int* screen = (short int*) 0x08000000;
 volatile int* buffer = (int *) 0x10003020;
+volatile int* status = (int*) 0x1000302C;
 
 void initScreen() {
     // prepare screen to print the game
@@ -30,10 +31,10 @@ void drawPixel(int x, int y, COLOR color) {
     // x in [0, SCREEN_MAX_WIDTH]
     // y in [0, SCREEN_MAX_HEIGHT]
 
-    if (x < 0 && x > SCREEN_MAX_X) {
+    if (x < 0 && x > SCREEN_MAX_WIDTH) {
 		return;
 	}
-	if (y < 0 && y > SCREEN_MAX_Y) {
+	if (y < 0 && y > SCREEN_MAX_HEIGHT) {
 		return;
 	}
 
@@ -43,7 +44,7 @@ void drawPixel(int x, int y, COLOR color) {
 void waitScreen() {
     // waits for screen vertical retrace
     *buffer = 1;
-	while ((*(status) & 0x1) == 1);
+	while (((*status) & 0x1) == 1);
 }
 
 // Avoid this.
@@ -56,4 +57,8 @@ void clearScreen() {
 			*(screen + y * 512 + x) = COLOR_BLACK;
 		}
 	}
+}
+
+void updateScreen() {
+	// Only for SFML
 }

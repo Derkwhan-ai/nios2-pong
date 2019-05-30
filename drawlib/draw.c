@@ -35,17 +35,17 @@ void clearLine(LINE line) {
 }
 
 void drawRect(RECTANGLE rect) {
-	for(int y = rect.y; y <= rect.y + rect.height; y++) {
+	for(int y = floor(rect.y); y <= floor(rect.y + rect.height); y++) {
 		drawPixel(rect.x, y, rect.color);
 	}
-	for(int y = rect.y; y <= rect.y + rect.height; y++) {
+	for(int y = floor(rect.y); y <= floor(rect.y + rect.height); y++) {
 		drawPixel(rect.x + rect.width, y, rect.color);
 	}
-	for(int x = rect.x + 1; x <= rect.x + rect.width - 1; x++) {
-		drawPixel(x, rect.y, rect.color);
+	for(int x = rect.x + 1; x < floor(rect.x + rect.width); x++) {
+		drawPixel(x, floor(rect.y), rect.color);
 	}
-	for(int x = rect.x + 1; x <= rect.x + rect.width - 1; x++) {
-		drawPixel(x, rect.y + rect.height, rect.color);
+	for(int x = rect.x + 1; x < floor(rect.x + rect.width); x++) {
+		drawPixel(x, floor(rect.y) + rect.height, rect.color);
 	}
 }
 
@@ -55,8 +55,8 @@ void clearRect(RECTANGLE rect) {
 }
 
 void drawRectFilled(RECTANGLE rect) {
-	for(int y = rect.y; y <= rect.y + rect.height; y++) {
-		for(int x = rect.x; x <= rect.x + rect.width; x++) {
+	for(int y = floor(rect.y); y <= floor(rect.y + rect.height); y++) {
+		for(int x = floor(rect.x); x <= floor(rect.x + rect.width); x++) {
 			drawPixel(x, y, rect.color);
 		}
 	}
