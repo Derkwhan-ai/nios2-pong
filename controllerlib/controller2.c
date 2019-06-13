@@ -13,6 +13,8 @@ volatile char* lcdReg = (char*) 0x10003050;
 
 volatile int* audioReg = (int*) 0x10003040;
 
+volatile int* buttonReg = (int*) 0x10000050;
+
 char controllerMaintain() {
     // This can be empty
     return 0;
@@ -26,12 +28,14 @@ char getSwitchValue(char n) { // return the n-th switch value (0 or 1)
 
 
 char getButtonValue(char n) { // return the n-th button balue (0 or 1)
-    return 0;
+    if (n < 0 || n > 2) return 0;
+
+    return (*buttonReg >> n+1) & 1;
 }
 
 
 void setGreenLed(char n, char state) { // set the on-off state of the n-th green led
-    if (n < 0 or n > 9) return;
+    if (n < 0 || n > 9) return;
 
     if (!state) {
         *greenLedReg = *greenLedReg & ~(1 << n);
@@ -51,7 +55,7 @@ void setRedLed(char n, char state) { // set the on-off state of the n-th red led
 }
 
 
-void displayOutput(int* reg, int value) {
+void displayOutput(volatile int* reg, int value) {
 	if (value < 0 || value > 9999) {
 		return;
 	}

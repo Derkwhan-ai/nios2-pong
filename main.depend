@@ -421,40 +421,71 @@
 	<SFML/Graphics.hpp>
 	"drawlib.h"
 
-1559200378 source:c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\main.cpp
-	<math.h>
-	<unistd.h>
-	<time.h>
+1560200607 source:c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\main.cpp
 	<stdlib.h>
+	<stdio.h>
+	"altera/exception.c"
+	"drawlib/screen2.c"
+	"controllerlib/controller2.c"
 	"drawlib/screen.c"
+	"controllerlib/controller.c"
 	"drawlib/draw.c"
 	"drawlib/physics.c"
-	"controllerlib/controller.c"
+	"assets/img/img_home.c"
+	"assets/img/img_credits.c"
+	"assets/img/img_instructions.c"
+	"assets/img/img_game_over_header.c"
+	"assets/img/img_game_over_p1.c"
+	"assets/img/img_game_over_p2.c"
 
 1558379160 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\drawlib.cpp
 	<SFML/Graphics.hpp>
 
 1558151937 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\drawlib.h
 
-1558381472 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\screen.c
+1559592175 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\screen.c
 	<SFML/Graphics.hpp>
 	"screen.h"
 
-1558392083 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\screen.h
+1560194511 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\screen.h
 
-1558405241 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\draw.c
+1560200601 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\draw.c
 	"draw.h"
 
-1559198571 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\draw.h
+1560198755 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\draw.h
 
 1559192290 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\physics.c
 	"physics.h"
 
 1559192412 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\physics.h
 
-1559191879 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\controllerlib\controller.c
+1559594210 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\controllerlib\controller.c
 	<SFML/Graphics.hpp>
 	"controller.h"
 
-1559192546 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\controllerlib\controller.h
+1559237349 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\controllerlib\controller.h
+
+1559240643 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\drawlib\screen2.c
+	"screen.h"
+
+1559242291 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\controllerlib\controller2.c
+	<string.h>
+	"controller.h"
+
+1560194443 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\assets\img\img_home.c
+
+1559591004 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\altera\exception.c
+	"macros.c"
+
+1559590961 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\altera\macros.c
+
+1560194426 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\assets\img\img_credits.c
+
+1560194447 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\assets\img\img_instructions.c
+
+1559595193 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\assets\img\img_game_over_header.c
+
+1560194433 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\assets\img\img_game_over_p1.c
+
+1560194438 c:\users\gficher\onedrive\documentos\faculdade\5sem\micro ii\pong\assets\img\img_game_over_p2.c
 

@@ -23,6 +23,8 @@ void initScreen();
 void drawPixel(int x, int y, COLOR color);
 void waitScreen();
 
+
+void clearScreenSoft();
 // Avoid this.
 void clearScreen();
 

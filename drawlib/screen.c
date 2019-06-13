@@ -19,12 +19,16 @@ sf::Color colorToSFML(short int color) {
 void drawPixel(int x, int y, COLOR color) {
 	sf::RectangleShape rectangle(sf::Vector2f(SCREEN_SCALE, SCREEN_SCALE));
 
-	rectangle.setPosition(x*SCREEN_SCALE, y*SCREEN_SCALE);
+	rectangle.setPosition(x * SCREEN_SCALE, y * SCREEN_SCALE);
 	rectangle.setFillColor(colorToSFML(color));
 
 	screen_window.draw(rectangle);
 }
 
+
+void clearScreenSoft() {
+	screen_window.clear(sf::Color::Black);
+}
 
 // Avoid this.
 void clearScreen() {

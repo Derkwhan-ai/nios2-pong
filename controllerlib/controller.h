@@ -2,6 +2,18 @@
 #define _CONTROLLERLIB_
 
 
+#define IO_DISPLAY_0 0x3F
+#define IO_DISPLAY_1 0x6
+#define IO_DISPLAY_2 0x5B
+#define IO_DISPLAY_3 0x4F
+#define IO_DISPLAY_4 0x66
+#define IO_DISPLAY_5 0x6D
+#define IO_DISPLAY_6 0x7D
+#define IO_DISPLAY_7 0x7
+#define IO_DISPLAY_8 0x7F
+#define IO_DISPLAY_9 0x67
+
+
 char controllerMaintain();
 
 char getSwitchValue(char); // return the n-th switch value (0 or 1)

@@ -47,6 +47,10 @@ void waitScreen() {
 	while (((*status) & 0x1) == 1);
 }
 
+void clearScreenSoft() {
+	return;
+}
+
 // Avoid this.
 void clearScreen() {
     // This should do nothing
